@@ -5,7 +5,8 @@ module ToDoApp
     configure do
       routes do
         get '/', to: 'home#index'
-        
+        get "/tasks/input", to: "tasks#input"
+        post "/tasks/task", to: "tasks#task"
       end
 
       load_paths << [
