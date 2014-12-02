@@ -1,8 +1,19 @@
 
-<h1><%= greeting %></h1>
+<h1>ToDoApp</h1>
 <p>
 Hier ist die erste Seite von der ToDoApp!
 </p>
+<form action="/" method='POST'>
+ Deine Aufgabe: <input name="task"/>
+<input type="submit" value="bestätigen" />
+</form>
+
+<% if(task && !task.empty?) %>
+<ul>
+<li><%= task %></li>
+</ul>
+<% end %>
+
 <p>
 <strong>
 Requirements </strong>
@@ -29,7 +40,9 @@ Priorisation </strong>
 
 </p>
 
-<a href="/tasks/input"> Neue Aufgabe</a>
+<a href="/impressum">Hier zum Impressum</a>
+
+
 
 
 

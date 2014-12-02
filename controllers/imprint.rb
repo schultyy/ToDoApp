@@ -1,13 +1,11 @@
 module ToDoApp
   module Controllers
-    module Home
+    module Imprint
       include ToDoApp::Controller
 
-      action 'Index' do
-        expose :task
+      action 'Page' do
 
         def call(params)
-          @task = params[:task]
         end
       end
     end
