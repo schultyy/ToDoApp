@@ -1,9 +1,9 @@
 module ToDoApp
   module Controllers
     module Home
-      include ToDoApp::Controller
+      class Index
+        include Lotus::Action
 
-      action 'Index' do
         expose :tasks
 
         def call(params)
@@ -15,15 +15,7 @@ module ToDoApp
 
           @tasks = ToDoApp::Repositories::TaskRepository.all
         end
-      end
 
-      action 'Delete' do
-        def call(params)
-          task = ToDoApp::Repositories::TaskRepository.find(params[:task_id])
-          ToDoApp::Repositories::TaskRepository.delete(task)
-
-          redirect_to '/'
-        end
       end
     end
   end

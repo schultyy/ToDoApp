@@ -1,12 +1,12 @@
 module ToDoApp
   module Controllers
     module Imprint
-      include ToDoApp::Controller
-
-      action 'Page' do
+      class Page
+        include Lotus::Action
 
         def call(params)
         end
+
       end
     end
   end
