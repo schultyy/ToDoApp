@@ -4,15 +4,22 @@
 Hier ist die erste Seite von der ToDoApp!
 </p>
 <form action="/" method='POST'>
- Deine Aufgabe: <input name="task"/>
-<input type="submit" value="bestätigen" />
+ Deine Aufgabe: <input type="text" name="task"/>
+<input type="submit" value="bestaetigen" />
 </form>
 
-<% if(task && !task.empty?) %>
+<!--Hallo :) -->
 <ul>
-<li><%= task %></li>
+  <% tasks.each do |task| %>
+    <li>
+      <form action="/tasks/delete" METHOD="POST">
+        <%= task.name %>
+        <input type='hidden' value='<%=task.id%>' name="task_id">
+        <button>Loeschen</button>
+      </form>
+    </li>
+  <% end %>
 </ul>
-<% end %>
 
 <p>
 <strong>
@@ -41,8 +48,3 @@ Priorisation </strong>
 </p>
 
 <a href="/impressum">Hier zum Impressum</a>
-
-
-
-
-

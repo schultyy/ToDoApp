@@ -6,6 +6,7 @@ module ToDoApp
       routes do
         get '/', to: 'home#index'
         post '/', to: 'home#index'
+        post '/tasks/delete', to: 'home#delete'
         get '/impressum', to: 'imprint#page'
       end
 
@@ -22,7 +23,7 @@ module ToDoApp
   end
 
   CONNECTION_URI = "sqlite://#{ __dir__ }/test.db"
-  
+
   Lotus::Model.configure do
     adapter type: :sql, uri: CONNECTION_URI
 
