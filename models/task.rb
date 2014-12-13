@@ -2,7 +2,7 @@ module ToDoApp
 	module Models
 	  	class Task
 	  	   include Lotus::Entity
-	  	   self.attributes = :name
+	  	   self.attributes :name
 	  	end
 	end
 end	
